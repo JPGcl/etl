@@ -8,6 +8,7 @@
 # Sembrar tabla Product
 # =============================================================================
 #
+Task.destroy_all
 Output.destroy_all
 Log.destroy_all
 
