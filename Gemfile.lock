@@ -240,8 +240,8 @@ DEPENDENCIES
   debug
   importmap-rails
   jbuilder
-  pg (~> 1.1)
-  puma (~> 5.0)
+  pg
+  puma
   rails (~> 7.0.3)
   selenium-webdriver
   sprockets-rails
