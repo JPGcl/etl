@@ -22,8 +22,8 @@ amazon:
   secret_access_key: <%= ENV['AWS_SECRET_ACCESS_KEY'] %> 
   region: <%= ENV['AWS_REGION'] %> 
   bucket: <%= ENV['AWS_BUCKET_S3'] %> 
-  http_open_timeout: 30
-  http_read_timeout: 30
+  http_open_timeout: 20
+  http_read_timeout: 20
   retry_limit: 3
 
 
