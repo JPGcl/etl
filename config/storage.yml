@@ -12,11 +12,12 @@ amazon:
   secret_access_key: <%= ENV['AWS_SECRET_ACCESS_KEY'] %> 
   region: <%= ENV['AWS_REGION'] %> 
   bucket: <%= ENV['AWS_BUCKET_S3'] %> 
-  http_open_timeout: 5
-  http_read_timeout: 5
+  http_open_timeout: 60
+  http_read_timeout: 60
   retry_limit: 3
-  upload:
-    server_side_encryption: "AES256"
+
+#  upload:
+#    server_side_encryption: "AES256"
 
 
 # Use bin/rails credentials:edit to set the AWS secrets (as aws:access_key_id|secret_access_key)
