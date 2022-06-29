@@ -8,6 +8,9 @@
 # Sembrar tabla Product
 # =============================================================================
 #
+Output.destroy_all
+Log.destroy_all
+
 Input.destroy_all
 #
 Input.create!(
