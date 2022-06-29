@@ -1,0 +1,30 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Tabla Input (Postgresql)</h1>
+
+<div id="inputs">
+
+  <table class="table table-dark">
+  <thead>
+    <th><strong>Tabla INPUT: </strong></th>
+    <tr>
+      <th scope="col">in_0</th>
+      <th>in_1</th>
+      <th>in_2</th>
+    </tr>
+  </thead>
+  <tbody>
+      <% @inputs.each do |input| %>
+        <tr>
+            <%= render input %>
+            <td><%= link_to "Ver", input %></td>
+        <tr>
+      <% end  %>
+  </tbody>
+</table>
+  
+</div>
+<br>
+<br>
+<%= link_to "Agregar un input a la tabla", new_input_path %> | 
+<%= link_to "Volver a TASK", tasks_path %>

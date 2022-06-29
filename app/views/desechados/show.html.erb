@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @desechado %>
+
+<div>
+  <%= link_to "Edit this desechado", edit_desechado_path(@desechado) %> |
+  <%= link_to "Back to desechados", desechados_path %>
+
+  <%= button_to "Destroy this desechado", @desechado, method: :delete %>
+</div>

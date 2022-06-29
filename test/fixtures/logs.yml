@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  log_0: 1
+  origen: 1
+  in_1: 1
+  in_2: MyString
+  in_3: 1
+  error: MyString
+
+two:
+  log_0: 1
+  origen: 1
+  in_1: 1
+  in_2: MyString
+  in_3: 1
+  error: MyString

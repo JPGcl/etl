@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  in_0: 1
+  in_1: MyString
+  in_2: 1
+
+two:
+  in_0: 1
+  in_1: MyString
+  in_2: 1

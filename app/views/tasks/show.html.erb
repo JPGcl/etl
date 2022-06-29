@@ -1,0 +1,104 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @task %>
+
+IMPORTANTE: Cada vez que ingresas a está página, se gatilla el ETL de datos CSV y Postgresql. No estoy controlando la carga on-demand.<br>
+Para efectos de este test, es recomendable: <br>
+&nbsp;&nbsp;&nbsp;1. Limpiar las tablas <%= link_to "Logs", logs_delete_delete_path %> y <%= link_to "Output", outputs_delete_delete_path %>.<br>
+&nbsp;&nbsp;&nbsp;2. Crear datos en la tabla <%= link_to "Input", inputs_path %><br>
+&nbsp;&nbsp;&nbsp;3. Cargar uno o más archivos CSV en <%= link_to "Editar task", edit_task_path(@task) %><br>
+<br>
+
+<table class="table table-dark">
+  <thead>
+    <th><strong>INPUT: CSV + Postgresql (<%= @data_in_0.count %>) </strong></th>
+    <tr>
+      <th scope="col">PK</th>
+      <th>Datos</th>
+      <th>Corte</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row"><%= @data_in_0 %></th>
+      <td><%= @data_in_1 %></td>
+      <td><%= @data_in_2 %></td>
+    </tr>
+  </tbody>
+</table>
+
+<br>
+<hr>
+
+<table class="table table-dark">
+  <thead>
+    <th><strong>Tabla OUTPUT: (<%= @data_output.count %>)</strong></th>
+    <tr>
+      <th scope="col">out_0</th>
+      <td>out_1</td>
+    </tr>
+  </thead>
+  <tbody>
+      <% if @data_output.count > 0 %>
+        <% @data_output.each_with_index do |c, i| %>
+          <tr>
+            <th><%= c.out_0 %></th>
+            <th><%= c.out_1 %></th>
+          </tr>
+        <% end %>
+      <% else %>
+          <tr>
+            <td>No existen datos en el OUTPUT</td>
+          </tr>
+      <% end %>
+  </tbody>
+</table>
+
+<br>
+<hr>
+
+
+<table class="table table-dark">
+  <thead>
+    <th><strong>LOG: (<%= @data_log.count %>)</strong></th>
+    <tr>
+      <th scope="col">Origen</th>
+      <th>in_0</th>
+      <th>in_1</th>
+      <th>in_2</th>
+      <th>Error</th>
+    </tr>
+  </thead>
+  <tbody>
+      <% if @data_log.count > 0 %>
+        <% @data_log.each_with_index do |c, i| %>
+          <tr>
+            <th scope="row"><%= c.origen %></th>  
+            <td><%= c.in_1 %></td> 
+            <td><%= c.in_2 %></td>
+            <td><%= c.in_3 %></td>
+            <td><%= c.error %></td>
+          </tr>
+        <% end %>
+      <% else %>
+          <tr>
+            <td>No existen datos en el LOG</td>
+          </tr>
+      <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<div>
+  <%= link_to "Editar task", edit_task_path(@task) %> |
+  <%= link_to "Volver a TASK", tasks_path %> |
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <%= link_to "Ver Logs", logs_path %> 
+  <br>
+  <br>
+  <%= button_to "Eliminar este task", @task, method: :delete %>
+  <br>
+  <br>
+  Juan Gutiérrez O.
+</div>
