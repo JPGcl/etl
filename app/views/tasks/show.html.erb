@@ -2,6 +2,13 @@
 
 <%= render @task %>
 
+<%
+p ENV['AWS_ACCESS_KEY_ID']
+p ENV['AWS_SECRET_ACCESS_KEY']
+p ENV['AWS_REGION']
+p ENV['AWS_BUCKET_S3']
+%>
+
 IMPORTANTE: Cada vez que ingresas a está página, se gatilla el ETL de datos CSV y Postgresql. No estoy controlando la carga on-demand.<br>
 Para efectos de este test, es recomendable: <br>
 &nbsp;&nbsp;&nbsp;1. Limpiar las tablas <%= link_to "Logs", logs_delete_delete_path %> y <%= link_to "Output", outputs_delete_delete_path %>.<br>
